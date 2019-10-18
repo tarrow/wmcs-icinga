@@ -8,4 +8,8 @@
     - name: Copy icinga config
       copy:
         src: files/conf.d
-        dest: /etc/icinga2/conf.d
+        dest: /etc/icinga2/
+    - name: Copy mattermost Plugin
+      copy:
+        src: files/icinga2-mattermost
+        dest: /usr/lib/nagios/plugins/
