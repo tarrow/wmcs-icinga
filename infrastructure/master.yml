@@ -1,0 +1,11 @@
+- hosts: icinga
+  name: Run icinga master
+  tasks:
+    - name: ensure icinga2 is installed
+      package:
+        name: icinga2
+        state: present
+    - name: Copy icinga config
+      copy:
+        src: files/conf.d
+        dest: /etc/icinga2/conf.d
